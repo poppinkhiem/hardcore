@@ -1,5 +1,16 @@
-import React from "react";
+import React from 'react'
+import { Link } from 'react-router-dom'
+import Sidebar from '../components/Sidebar';
+import "../App.css"
+function Home() {
+  return (
+    <div className='container'>
+ 
 
-export default function Home() {
-  return <>Home Here</>;
+ok
+
+  </div>
+  )
 }
+
+export default Home; 

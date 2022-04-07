@@ -1,7 +1,9 @@
 import React from 'react'
-
-export default function Setting() {
+import "../App.css"
+function Setting() {
   return (
-    <div>Setting..............................................................</div>
+    <div  className='container'>Setting.....................</div>
   )
 }
+
+export default Setting
