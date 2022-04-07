@@ -1,19 +1,5 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import Sidebar from '../components/Sidebar';
+import React from "react";
 
-function Home() {
-  return (
-    <div>
- 
-    <Link to="transaction"></Link>
-    <Link to="card"></Link>
-    <Link to="setting"></Link>
-
-
-
-  </div>
-  )
+export default function Home() {
+  return <>Home Here</>;
 }
-
-export default Home; 

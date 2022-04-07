@@ -1,9 +1,14 @@
 import React from 'react'
-
-function Transaction() {
+import { Calendar } from 'antd';
+function onPanelChange(value, mode) {
+  console.log(value.format('YYYY-MM-DD'), mode);
+}
+export default function Transaction() {
   return (
-    <div>Transaction</div>
+    <div>
+
+ 
+    
+<Calendar onPanelChange={onPanelChange} /> </div>
   )
 }
-
-export default Transaction

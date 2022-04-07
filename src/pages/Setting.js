@@ -1,9 +1,7 @@
 import React from 'react'
 
-function Setting() {
+export default function Setting() {
   return (
-    <div>Setting</div>
+    <div>Setting..............................................................</div>
   )
 }
-
-export default Setting

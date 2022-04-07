@@ -1,28 +1,41 @@
-import './App.css';
-import {Routes, Route} from 'react-router-dom'
-import React from 'react'
-import Home from './pages/Home'
-import Card from './pages/Card'
-import Setting from './pages/Setting'
-import Transaction from './pages/Transaction'
-import Sidebar from './components/Sidebar';
+import React from "react";
+import "./App.css";
+import Navbar from "./components/Navbar";
+import "antd/dist/antd.css";
+import { PrivateRoute, Routes, Route } from "react-router-dom";
 
+import Setting from "./pages/Setting";
+import Card from "./pages/Card";
+import Login from "./components/Login";
+import Transaction from "./pages/Transaction";
 
+import Home from "./pages/Home";
+import Tables from "./components/Tables";
+import { Layout, Content } from "antd";
+import { Router } from "express";
+// import { yupResolver } from "@hookform/resolvers/yup";
+// import * as yup from "yup";
 
 function App() {
-  return (
+  <Login />;
 
-    <div className="App">
-     <Routes>
-     <Route path="/" element={<Home/>}></Route>
-     <Route path="/transaction" element={<Transaction/>}> </Route>
-     <Route path="/setting" element={<Setting/>}></Route>
-     <Route path="/card" element={<Card/>}> </Route> 
-     </Routes>
-     <Sidebar> </Sidebar>
- 
-    </div>
-  ); 
+  return (
+    <>
+      <Router>
+        <Login />
+        {/* <div style={{ display: "flex" }}> */}
+        {/* <Navbar /> */}
+
+        <Routes>
+          <Route path="/" element={<Tables />} />
+          <Route path="/transaction" element={<Transaction />} />
+          <Route path="/setting" element={<Setting />} />
+          <Route path="/card" element={<Card />} />
+          <Route path="/signup" element={<Login />} />
+        </Routes>
+      </Router>
+    </>
+  );
 }
 
 export default App;

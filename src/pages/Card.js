@@ -1,43 +1,111 @@
-import React from "react";
-const card = [
+import React from 'react'
+import { Table, Tag, Space } from 'antd';
+const columns = [
   {
-    name: "John",
-    account: "111",
+    title: 'Name',
+    dataIndex: 'name',
+    key: 'name',
+    render: text => <a>{text}</a>,
   },
   {
-    name: "Ly",
-    account: "122",
+    title: 'Age',
+    dataIndex: 'age',
+    key: 'age',
   },
   {
-    name: "Rick",
-    account: "124",
+    title: 'Address',
+    dataIndex: 'address',
+    key: 'address',
   },
   {
-    name: "Loan",
-    account: "125",
+    title: 'Tags',
+    key: 'tags',
+    dataIndex: 'tags',
+    render: tags => (
+      <>
+        {tags.map(tag => {
+          let color = tag.length > 5 ? 'geekblue' : 'green';
+          if (tag === 'loser') {
+            color = 'volcano';
+          }
+          return (
+            <Tag color={color} key={tag}>
+              {tag.toUpperCase()}
+            </Tag>
+          );
+        })}
+      </>
+    ),
   },
   {
-    name: "Robert",
-    account: "126",
-  },
-  {
-    name: "Hoa",
-    account: "128",
+    title: 'Action',
+    key: 'action',
+    render: (text, record) => (
+      <Space size="middle">
+        <a>Invite {record.name}</a>
+        <a>Delete</a>
+      </Space>
+    ),
   },
 ];
 
-function Card() {
+const data = [
+  {
+    key: '1',
+    name: 'Vietcombank',
+    age: 32,
+    address: 'New York No. 1 Lake Park',
+    tags: ['nice', 'developer'],
+  },
+  {
+    key: '2',
+    name: 'Agribank',
+    age: 42,
+    address: 'London No. 1 Lake Park',
+    tags: ['loser'],
+  },
+  {
+    key: '3',
+    name: 'Shinhanbank',
+    age: 32,
+    address: 'Sidney No. 1 Lake Park',
+    tags: ['cool', 'teacher'],
+  },
+  {
+    key: '3',
+    name: 'Shinhanbank',
+    age: 32,
+    address: 'Sidney No. 1 Lake Park',
+    tags: ['cool', 'teacher'],
+  },
+  {
+    key: '3',
+    name: 'Shinhanbank',
+    age: 32,
+    address: 'Sidney No. 1 Lake Park',
+    tags: ['cool', 'teacher'],
+  },
+  {
+    key: '3',
+    name: 'Shinhanbank',
+    age: 32,
+    address: 'Sidney No. 1 Lake Park',
+    tags: ['cool', 'teacher'],
+  },
+  {
+    key: '3',
+    name: 'Shinhanbank',
+    age: 32,
+    address: 'Sidney No. 1 Lake Park',
+    tags: ['cool', 'teacher'],
+  },
+];
+export default function Card() {
   return (
-    <>
-      <ol>
-        {card.map(function cards(c) {
-          return <li>{c.name}</li>;
-        })}
+    <div>
+<Table columns={columns} dataSource={data} expandable style={{width:'80vw', tableLayout:'auto'}} />
 
-        <button> Click here to see</button>
-      </ol>
-    </>
-  );
+
+</div>
+  )
 }
-
-export default Card;
