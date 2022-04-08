@@ -4,7 +4,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 
 const schema = yup.object().shape({
-  email: yup.string().email().required(),
+  username: yup.string().min(8).required(),
   password: yup.string().min(8).max(32).required(),
 });
 
@@ -34,7 +34,7 @@ const Login = () => {
       <p>{errors.password?.message}</p>
       <br />
 
-      <button type="submit">Sign in</button>
+      <button type="submit">Login in</button>
     </form>
   );
 };

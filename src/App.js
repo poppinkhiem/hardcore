@@ -8,13 +8,18 @@ import Card from './pages/Card';
 import Logout from './pages/Logout';
 import Setting from './pages/Setting';
 import Transaction from './pages/Transaction';
+import Login from './components/Login';
+
 
 function App() {
   return (
     <>
+
+
+
       <Router> 
         <Sidebar/>
-      <Table/>
+        <Login/>
         <Routes className='container'>
        
         <Route path='/'  /> 
